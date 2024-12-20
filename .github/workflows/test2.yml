@@ -1,4 +1,4 @@
-name: Test Get JSON Action
+name: Test JSON to variables
 
 on:
   workflow_dispatch:  # 允许手动触发工作流
