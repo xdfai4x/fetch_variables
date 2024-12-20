@@ -14,7 +14,7 @@ jobs:
         id: get-json
         uses: ./.github/actions/get-json  # 根据你的项目结构调整路径
         with:
-          url: 'https://api.example.com/data'  # 替换为实际的 JSON 数据源 URL
+          url: 'https://github.com/xdfai4x/fetch_variables/blob/main/sample.json'  # 替换为实际的 JSON 数据源 URL
 
       - name: Display fetched data
         run: |
