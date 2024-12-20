@@ -1,0 +1,22 @@
+name: Test Get JSON Action
+
+on:
+  workflow_dispatch:  # 允许手动触发工作流
+
+jobs:
+  test-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Get JSON from URL
+        id: get-json
+        uses: ./.github/actions/get-json  # 根据你的项目结构调整路径
+        with:
+          url: 'https://api.example.com/data'  # 替换为实际的 JSON 数据源 URL
+
+      - name: Display fetched data
+        run: |
+          echo "Value of key1 from environment variable: $key1"
+          echo "Value of key1 from output: ${{ steps.get-json.outputs.key1 }}"
