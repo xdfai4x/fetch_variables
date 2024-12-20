@@ -10,6 +10,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Install dependencies
+        run: |
+          cd ./.github/actions/get-json
+          npm install
+
       - name: Get JSON from URL
         id: get-json
         uses: ./.github/actions/get-json  # 根据你的项目结构调整路径
