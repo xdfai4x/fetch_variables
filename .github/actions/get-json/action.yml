@@ -1,0 +1,14 @@
+name: 'Get JSON from URL'
+description: 'Fetch JSON from a specified URL and set GitHub variables'
+inputs:
+  url:
+    description: 'The URL to fetch the JSON from'
+    required: true
+outputs:
+  json-keys:
+    description: 'The keys from the fetched JSON'
+  json-values:
+    description: 'The values from the fetched JSON'
+runs:
+  using: 'node12'
+  main: 'index.js'
