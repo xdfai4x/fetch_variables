@@ -2,8 +2,18 @@
     "name": "fetch-variables-action",
     "version": "1.0.0",
     "main": "index.js",
+    "scripts": {
+      "lint": "eslint .",
+      "prepare": "ncc build index.js -o dist --source-map --license licenses.txt",
+      "all": "npm run lint && npm run prepare"
+    },
     "dependencies": {
       "@actions/core": "^1.9.1",
-      "axios": "^0.21.1"
+      "@actions/io": "^1.0.2",
+      "@alicloud/pop-core": "^1.7.13"
+    },
+    "devDependencies": {
+        "@vercel/ncc": "^0.34.0",
+        "eslint": "^8.26.0"
     }
-  }
+}
