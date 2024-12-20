@@ -10,18 +10,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Install dependencies
-        run: |
-          cd ./.github/actions/get-json
-          npm install
-
       - name: Get JSON from URL
-        id: get-json
-        uses: ./.github/actions/get-json  # 根据你的项目结构调整路径
+        uses: xdfai4x/fetch_variables@main
         with:
-          url: 'https://github.com/xdfai4x/fetch_variables/blob/main/sample.json'  # 替换为实际的 JSON 数据源 URL
+          url: 'https://raw.githubusercontent.com/xdfai4x/fetch_variables/main/sample.json'
 
       - name: Display fetched data
         run: |
           echo "Value of key1 from environment variable: $key1"
-          echo "Value of key1 from output: ${{ steps.get-json.outputs.key1 }}"
+          echo "Value of key1 from output: ${{ steps.get-json.outputs.key2 }}"
